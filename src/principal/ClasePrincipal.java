@@ -13,6 +13,15 @@ public class ClasePrincipal {
         CompaniesProductoras co1 = new CompaniesProductoras("Tropicana", "345", "57575757575");
         CompaniesProductoras co2 = new CompaniesProductoras("La Reina", "102", "31212312");
         CompaniesProductoras co3 = new CompaniesProductoras("Policia Nacional", "789", "35553");
+
+
+        /*
+        * No se permite el mismo nombre asi que al momemento de agregar un nombre
+        * igual para las compaines productoras este lanzara una excepcion
+        * CompaniesProductoras co4 = new CompaniesProductoras("Tropicana", "102", "31212312");
+        * */
+
+
         System.out.println(co1 +"\n"+ co2 +"\n"+ co3);
         //radios con emisiones
         Radios ra1 = new Radios("Sin Tapujos", "12", TipoTransmision.AM

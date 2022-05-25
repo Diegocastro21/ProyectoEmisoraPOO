@@ -1,6 +1,8 @@
 package logica;
-
+import java.util.Set;
+import java.util.HashSet;
 public class CompaniesProductoras {
+    private static Set<String> nombres = new HashSet<>();
     private String nombre = "";
     private String numeroRFC;
     private String telefono;
@@ -9,28 +11,24 @@ public class CompaniesProductoras {
 
         //Esta seria la validacion de nombre unico
         //validarNombreUnico(nombre);
-        this.nombre = nombre;
+        this.setNombre(nombre);
         this.numeroRFC = numeroRFC;
         this.telefono = telefono;
     }
-
-    /*public  boolean validarNombreUnico(String nombre ) {
-        if (this.nombre.equals(nombre)) {
-            System.out.println("E R R O R \n NO SE PERMITEN NOMBRES IGUALES EN LAS COMPANIES PRODUCTORAS");
-            System.out.println(nombre);
-            return true;
-        } else {
-            return false;
+    public void setNombre(String nombre) {
+        if (nombres.contains(nombre)) {
+            throw new IllegalArgumentException( "NO SE PERMITEN NOMBRES IGUALES EN LAS COMPANIES PRODUCTORAS" );
         }
-    }*/
+        nombres.add(nombre);
+        this.nombre = nombre;
+    }
+
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+
 
     public String getNumeroRFC() {
         return numeroRFC;
